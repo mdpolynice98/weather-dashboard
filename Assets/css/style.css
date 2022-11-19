@@ -79,4 +79,14 @@ body {
     padding: 25px;
     position: fixed;
     bottom: 0;
+    display: flex;
+    color:azure;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.future-forecast .weather-forecast {
+    display: flex;
+
 }
