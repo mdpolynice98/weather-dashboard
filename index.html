@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>Weather App</title>
+</head>
+
+<body>
+    
+    <main class="container">
+
+        <div class="current-info">
+
+            <div class="date-container">
+                <time class="time" id="time">
+                    12:00 <span id="am-pm">PM</span>
+                </time>
+                <time class="date" id="date">
+                    Sunday, 13 November
+                </time>
+
+                <div class="others" id="current-weather-items">
+                    <figure class="weather-items">
+                        <div>Tempature</div>
+                        <div>46&#176; F</div>
+                    </figure>
+                    <figure class="weather-items">
+                        <div>Humidity</div>
+                        <div>50%</div>
+                    </figure>
+                    <figure class="weather-items">
+                        <div>Wind</div>
+                        <div>NW 11.807 MPH</div>
+                    </figure>
+                    <figure class="weather-items">
+                        <div>UV Index</div>
+                        <div>000</div>
+                    </figure>      
+                </div>
+            </div>
+
+            <div class="place-container">
+                <div id="city" class="city">Atlanta, GA</div>
+                <time class="time zone" id="time zone">Eastern (New York)</time>
+            </div>
+
+        </div>
+
+        <div class="future-forcast">
+            <div class="weather-forecast" id="weather-forcast">
+                <div class="weather-forecast-item">
+                    <img src="" alt="weather icon" class="w-icon">
+                    <time class="day">Monday</time>
+                    <time class="temp">Night - 45&#176; F</time>
+                    <time class="temp">Day - 45&#176; F</time>
+                </div>
+            </div>
+    
+            <div class="weather-forecast" id="weather-forcast">
+                <div class="weather-forecast-item">
+                    <img src="" alt="weather icon" class="w-icon">
+                    <time class="day">Tuesday</time>
+                    <time class="temp">Night - 45&#176; F</time>
+                    <time class="temp">Day - 45&#176; F</time>
+                </div>
+            </div>
+    
+            <div class="weather-forecast" id="weather-forcast">
+                <div class="weather-forecast-item">
+                    <img src="" alt="weather icon" class="w-icon">
+                    <time class="day">Wednesday</time>
+                    <time class="temp">Night - 45&#176; F</time>
+                    <time class="temp">Day - 45&#176; F</time>
+                </div>
+            </div>
+    
+            <div class="weather-forecast" id="weather-forcast">
+                <div class="weather-forecast-item">
+                    <img src="" alt="weather icon" class="w-icon">
+                    <time class="day">Thursday</time>
+                    <time class="temp">Night - 45&#176; F</time>
+                    <time class="temp">Day - 45&#176; F</time>
+                </div>
+            </div>
+    
+            <div class="weather-forecast" id="weather-forcast">
+                <div class="weather-forecast-item">
+                    <img src="" alt="weather icon" class="w-icon">
+                    <time class="day">Friday</time>
+                    <time class="temp">Night - 45&#176; F</time>
+                    <time class="temp">Day - 45&#176; F</time>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- Using other semantic HTML elements compromised the styling, so I just settled for the div tag. -->
