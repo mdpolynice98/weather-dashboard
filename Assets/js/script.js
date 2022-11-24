@@ -1,4 +1,4 @@
-var apiKey = 'e79c76975ad2637930a749ca25f1b0f0';
+var apiKey = 'c9544582-81d7-4e42-82fa-cda1b2a87e6e';
 
 var getCurrentWeather = function(input) {
 
@@ -7,14 +7,14 @@ var getCurrentWeather = function(input) {
     var input = document.getElementById("searchCity").value;
 
 
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=" + input + "&appid=" + apiKey + "&units=imperial")
+    fetch("https://meteum.ai/b2b/console/keys/details?id=1274") 
     .then(
         (response ) => {
             return response.json()}
         ).then((data) => {
             console.log(data)
 
-            //creating card container
+            
             var card = document.createElement("div");
             card.classList.add("currentWeather");
 
@@ -27,13 +27,13 @@ var getCurrentWeather = function(input) {
             var iconPic = data.weather[0].icon;
 
             var temp = document.createElement("p");
-            temp.textContent = "Temp: " + data.main.temp + " F";
+            temp.textContent = "Temp: " + data.main.temp + "F";
 
             var wind = document.createElement("p");
-            wind.textContent = "Wind: " + data.wind.speed + " Mph";
+            wind.textContent = "Wind: " + data.wind.speed + "MPH";
 
             var humidity = document.createElement("p");
-            humidity.textContent = "Humidity: " + data.main.humidity + " %";
+            humidity.textContent = "Humidity: " + data.main.humidity + "%";
 
             var todayDate = document.createElement('h2');
             todayDate.innerHTML =  moment().format('MMMM Do YYYY');
@@ -41,12 +41,9 @@ var getCurrentWeather = function(input) {
             card.append(todayDate, image, title, temp, wind, humidity);
             currentDiv.append(card);
 
-            var lat = data.coord.lat;
-            var long = data.coord.lon;
+        
 
-            // var uvIndex = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&appid=" + apiKey;
-
-            fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&appid=" + apiKey)
+            fetch("https://meteum.ai/b2b/console/keys/details?id=1274")
             .then((response) => {
                 return response.json()
             }).then((data) => {
@@ -81,7 +78,7 @@ var getCurrentWeather = function(input) {
                 weekly.classList.add('col-md-2');
 
                 var image = document.createElement('img')
-                image.src = "https://openweathermap.org/img/w/" + iconPic + ".png";
+                image.src = "https://meteum.ai/b2b/console/keys/details?id=1274" + iconPic + ".png";
                 var iconPic = data.daily[i].weather[0].icon;
 
                 var date = document.createElement('h5');
@@ -92,7 +89,7 @@ var getCurrentWeather = function(input) {
                 dailyTemp.textContent = "Temperature: " + tempEl;
 
                 var windEl = document.createElement('p');
-                windEl.textContent = "Wind Speed: " + data.daily[i].wind_speed + ' Mph';
+                windEl.textContent = "Wind Speed: " + data.daily[i].wind_speed + 'MPH';
                 
                 var humidEl = document.createElement('p');
                 humidEl.textContent = 'Humidity: ' + data.daily[i].humidity + ' %';
@@ -120,36 +117,6 @@ var getCurrentWeather = function(input) {
 
     var cityArr = localStorage.getItem('history') || [];
 
-    function getSearch( ) {
-        var city = document.getElementById('searchCity').value;
-        // console.log(city);
-
-        getCurrentWeather(city);
-        makeRow(city);
-    };
-     
-
-    function makeRow(city) {
-    
-        //check to see if current search value exists in history 
-        if(cityArr.indexOf(city) === -1){
-            cityArr.push(city);
-            localStorage.setItem('history', JSON.stringify(cityArr))
-        }
-        // if it dosent push into history array
-        if(cityArr.length > 0){
-            for (let i = 0; i < cityArr.length; i++) {
-                var list = document.createElement('div')
-                list.classList.add('ul');
-
-                var cities = document.createElement('button');
-                cities.innerHTML = cityArr[i].value
-                
-                list.append(cities);
-                searchCity.append(list);
-            }
-        }
-    }
 
 
 searchBtn.addEventListener('click', getCurrentWeather)
