@@ -85,7 +85,7 @@ var getCurrentWeather = function(input) {
                 date.innerHTML = moment.unix(data.daily[i].dt).format('MM/DD/YY');
 
                 var dailyTemp = document.createElement('p')
-                var tempEl = Math.round(((parseFloat(data.daily[i].temp.day)-273.15)*1.8)+32) + ' F';   
+                var tempEl = Math.round(parseFloat(data.daily[i].temp.day)) + 'F';   
                 dailyTemp.textContent = "Temperature: " + tempEl;
 
                 var windEl = document.createElement('p');
