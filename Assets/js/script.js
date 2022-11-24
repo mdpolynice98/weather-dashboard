@@ -23,7 +23,7 @@ var getCurrentWeather = function(input) {
             title.textContent = input + " ";
 
             var image = document.createElement('img')
-            image.src = "http://openweathermap.org/img/w/" + iconPic + ".png";
+            image.src = "https://meteum.ai/b2b/console/keys/details?id=1274" + iconPic + ".png";
             var iconPic = data.weather[0].icon;
 
             var temp = document.createElement("p");
